@@ -1,0 +1,20 @@
+{
+    "name": "MCP23017_LCD12864",
+    "keywords": "LCD12864-V2.0 with ST7920 driver in parallel 8bit mode using I2C I/O expander ( MCP23017 )",
+    "description": "Arduino library for LCD12864 I2C module",
+    "repository":
+    {
+        "type": "git",
+        "url": "https://github.com/andhieSetyabudi/MCP23017_LCD12864.git"
+    },
+    "authors":
+    {
+        "name": "Andhie Setyabudi",
+        "url": "https://github.com/andhieSetyabudi",
+        "maintainer": true
+    },
+    "version": "1.0.0",
+    "license": "MIT",
+    "frameworks": "arduino",
+    "platforms": "*"
+}
