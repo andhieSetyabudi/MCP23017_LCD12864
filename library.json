@@ -1,5 +1,5 @@
 {
-    "name": "MCP23017_LCD12864",
+    "name": "I2C_LCD12864",
     "keywords": "LCD12864-V2.0 with ST7920 driver in parallel 8bit mode using I2C I/O expander ( MCP23017 )",
     "description": "Arduino library for LCD12864 I2C module",
     "repository":
