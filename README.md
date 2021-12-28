@@ -28,10 +28,12 @@ i use LVGL online tools :
  - then click **convert**
 
 You just need to copy the data array, not all of the existing source inside that files
->. in my sample codes
+> in my sample codes
+```arduino
 ...
-  **lcd.clear(0,0);
+    lcd.clear(0,0);
     lcd.clearBuffer();
     lcd.drawBitmap(1,1,84,48,(uint8_t*)bitmapArray,1);    // image size : 84x48
     lcd.sendBuffer();**
  ...
+```
