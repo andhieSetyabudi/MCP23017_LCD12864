@@ -1,0 +1,36 @@
+#######################################
+# Syntax Coloring Map for Statistic Library
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+MCP23017_LCD12864	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+init KEYWORD2
+fillBuffer KEYWORD2
+clearBuffer KEYWORD2
+clear KEYWORD2
+sendBuffer KEYWORD2
+setBL_on KEYWORD2
+setBL_off KEYWORD2
+setFont KEYWORD2
+invertingText KEYWORD2
+drawChar KEYWORD2
+drawText KEYWORD2
+resumeDrawText KEYWORD2
+drawPixel KEYWORD2
+drawHLine KEYWORD2
+drawVLine KEYWORD2
+drawBox KEYWORD2
+drawFillBox KEYWORD2
+drawCircle KEYWORD2
+drawFillCircle KEYWORD2
+drawBitmap KEYWORD2
+#######################################
+# Constants (LITERAL1)
+#######################################
