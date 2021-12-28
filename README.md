@@ -37,3 +37,10 @@ You just need to copy the data array, not all of the existing source inside that
     lcd.sendBuffer();**
  ...
 ```
+
+I would say thank you very much for 
+
+<a href="https://github.com/devMorpheus"><img src="https://user-images.githubusercontent.com/42593803/147535208-82015d09-bc99-444d-a226-36aa698a7073.png" align="left" height="48" width="48"></a>
+
+https://github.com/devMorpheus/zLCD
+as reference for LCD7920 driver 
