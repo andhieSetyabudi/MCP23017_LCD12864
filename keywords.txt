@@ -6,7 +6,7 @@
 # Datatypes (KEYWORD1)
 #######################################
 
-MCP23017_LCD12864	KEYWORD1
+I2C_LCD12864	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
