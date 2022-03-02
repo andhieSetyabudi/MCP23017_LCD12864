@@ -21,7 +21,7 @@ In parallel 8bit mode, set PSB pin on High state ( for parallel ).
 
 Convert the bitmap ( in an even matrix resolution size ) that not exceed than lcd pixel's size
 i use LVGL online tools :
-![LVGL-tools](https://lvgl.io/tools/imageconverter)
+[LVGL-tools](https://lvgl.io/tools/imageconverter).
  - Upload your BMP file
  - Set color format to **Indexed 2 colors**
  - check **Output in big-endian format** on the Options
