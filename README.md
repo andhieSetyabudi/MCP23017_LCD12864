@@ -11,8 +11,8 @@ This library based on MCP23017 ( I2C I/O expander ) that would be driver for LCD
 ![MCP23017 I2C I/O expander module](https://github.com/andhieSetyabudi/MCP23017_LCD12864/blob/main/img/c9bc9c9e-2c37-45f4-a79a-c4409af56354.jpg)
 
 ##Reference ( datasheet )
-- ![LCD12864](https://www.exploreembedded.com/wiki/images/7/77/QC12864B.pdf)
-- ![MCP32017](https://ww1.microchip.com/downloads/en/devicedoc/20001952c.pdf)
+- [LCD12864](https://www.exploreembedded.com/wiki/images/7/77/QC12864B.pdf)
+- [MCP32017](https://ww1.microchip.com/downloads/en/devicedoc/20001952c.pdf)
 
 In parallel 8bit mode, set PSB pin on High state ( for parallel ). 
 
