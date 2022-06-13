@@ -1,5 +1,5 @@
-#ifndef MCP23017_LCD12864_H_
-#define MCP23017_LCD12864_H_
+#ifndef I2C_LCD12864_H_
+#define I2C_LCD12864_H_
 
 
 #include "Arduino.h"
@@ -88,7 +88,7 @@ inline MCP23_Register operator+(MCP23_Register a, MCP23_Port b) {
 	return static_cast<MCP23_Register>(static_cast<uint8_t>(a) + static_cast<uint8_t>(b));
 };
 
-class MCP23017_LCD12864:public lcdBase{
+class I2C_LCD12864:public lcdBase{
     private :
         TwoWire *i2c_ = NULL;        uint8_t addr;
         uint16_t pinIO;     // MSB : GPIOB & LSB : GPIOA
@@ -100,14 +100,14 @@ class MCP23017_LCD12864:public lcdBase{
         void transfer(uint8_t type_, uint8_t data);
         uint8_t  bl_ = 0;
     public :
-        MCP23017_LCD12864(TwoWire *wire = &Wire, uint8_t addr = 0x20)
+        I2C_LCD12864(TwoWire *wire = &Wire, uint8_t addr = 0x20)
         {
             this->i2c_  = wire;
             this->addr  = addr;
             this->bl_ = 1;
         };
 
-        ~MCP23017_LCD12864();
+        ~I2C_LCD12864();
 
         void init(void);
 
