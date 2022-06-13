@@ -138,15 +138,15 @@ void lcdBase::write_char(uint16_t character)
     for (uint8_t count_x = 0; count_x < font_size_x; count_x++){
         count_var = count_x + font_length_sysinfo + (character * font_size_x);
         
-        if (font_data[count_var] != 0){
+        if ((uint8_t)pgm_read_byte_near(font_data+count_var) != 0){
             for (uint8_t count_y = 0; count_y < font_size_y; count_y++){
-                temp_data = ((font_data[count_var] << 7-count_y) >> 7) & 1;
+                temp_data = (((uint8_t)pgm_read_byte_near(font_data+count_var)  << 7-count_y) >> 7) & 1;
                 if(inverting_text) temp_data ^= 1;
                 drawPixel(font_x + count_x - count_space, font_y + count_y, temp_data);
             }
             count_char++;
         }
-        else if (font_data[count_var + 1] == 0){
+        else if ((uint8_t)pgm_read_byte_near(font_data+count_var+1)  == 0){
             count_space++;
         }
     }
