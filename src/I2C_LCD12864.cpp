@@ -1,6 +1,6 @@
-#include "MCP23017_LCD12864.h"
+#include "I2C_LCD12864.h"
 
-uint8_t MCP23017_LCD12864::readRegister(MCP23_Register reg)
+uint8_t I2C_LCD12864::readRegister(MCP23_Register reg)
 {
 	this->i2c_->beginTransmission(this->addr);
 	this->i2c_->write(static_cast<uint8_t>(reg));
@@ -9,7 +9,7 @@ uint8_t MCP23017_LCD12864::readRegister(MCP23_Register reg)
 	return this->i2c_->read();
 }
 
-void MCP23017_LCD12864::readRegister(MCP23_Register reg, uint8_t& portA, uint8_t& portB)
+void I2C_LCD12864::readRegister(MCP23_Register reg, uint8_t& portA, uint8_t& portB)
 {
 	this->i2c_->beginTransmission(this->addr);
 	this->i2c_->write(static_cast<uint8_t>(reg));
@@ -19,7 +19,7 @@ void MCP23017_LCD12864::readRegister(MCP23_Register reg, uint8_t& portA, uint8_t
 	portB = this->i2c_->read();
 }
 
-void MCP23017_LCD12864::writeRegister(MCP23_Register reg, uint8_t value)
+void I2C_LCD12864::writeRegister(MCP23_Register reg, uint8_t value)
 {
     this->i2c_->beginTransmission(this->addr);
 	this->i2c_->write(static_cast<uint8_t>(reg));
@@ -27,7 +27,7 @@ void MCP23017_LCD12864::writeRegister(MCP23_Register reg, uint8_t value)
 	this->i2c_->endTransmission();
 }
 
-void MCP23017_LCD12864::writeRegister(MCP23_Register reg, uint8_t portA, uint8_t portB)
+void I2C_LCD12864::writeRegister(MCP23_Register reg, uint8_t portA, uint8_t portB)
 {
 	this->i2c_->beginTransmission(this->addr);
 	this->i2c_->write(static_cast<uint8_t>(reg));
@@ -37,7 +37,7 @@ void MCP23017_LCD12864::writeRegister(MCP23_Register reg, uint8_t portA, uint8_t
 }
 
 
-void MCP23017_LCD12864::onParallelMode(void)
+void I2C_LCD12864::onParallelMode(void)
 {
     byte val = 0x24;
     this->writeRegister(MCP23_Register::GPIO_A , val);
@@ -50,7 +50,7 @@ void MCP23017_LCD12864::onParallelMode(void)
     delayMicroseconds(72); 
 }
 
-void MCP23017_LCD12864::transfer(uint8_t type_, uint8_t data)
+void I2C_LCD12864::transfer(uint8_t type_, uint8_t data)
 {
     uint8_t ctrl=0x34;      // PSB & RST always pull-up, paralel mode, and enable hi
     if( !this->bl_ )
@@ -69,17 +69,17 @@ void MCP23017_LCD12864::transfer(uint8_t type_, uint8_t data)
 }
 
 
-void MCP23017_LCD12864::fillBuffer(bool fill_type)
+void I2C_LCD12864::fillBuffer(bool fill_type)
 {
     memset(frame_buffer, fill_type ? 0xff : 0x0, 1024);
 }
 
-void MCP23017_LCD12864::clearBuffer(void)
+void I2C_LCD12864::clearBuffer(void)
 {
     fillBuffer(0);
 }
 
-void MCP23017_LCD12864::clear(bool type_clear, bool fill_type)
+void I2C_LCD12864::clear(bool type_clear, bool fill_type)
 {
     if (type_clear == 0)
     {
@@ -105,7 +105,7 @@ void MCP23017_LCD12864::clear(bool type_clear, bool fill_type)
     }
 }
 
-void MCP23017_LCD12864::sendBuffer(bool type_flush)
+void I2C_LCD12864::sendBuffer(bool type_flush)
 {
     uint8_t temp_buffer = 0x0;
     if (type_flush == 0)
@@ -144,9 +144,9 @@ void MCP23017_LCD12864::sendBuffer(bool type_flush)
     }
 }
 
-MCP23017_LCD12864::~MCP23017_LCD12864(){};
+I2C_LCD12864::~I2C_LCD12864(){};
 
-void MCP23017_LCD12864::init()
+void I2C_LCD12864::init()
 {
 	//BANK = 	0 : sequential register addresses
 	//MIRROR = 	0 : use configureInterrupt 
@@ -198,7 +198,7 @@ void MCP23017_LCD12864::init()
 }
 
 
-void MCP23017_LCD12864::setBL_off(void)
+void I2C_LCD12864::setBL_off(void)
 {
     // backlight pin on PA1, active low
     this-> bl_ = 1;
@@ -207,7 +207,7 @@ void MCP23017_LCD12864::setBL_off(void)
 }
 
 
-void MCP23017_LCD12864::setBL_on(void)
+void I2C_LCD12864::setBL_on(void)
 {
     // backlight pin on PA1, active low
     this-> bl_ = 0;
