@@ -5,7 +5,7 @@
 #define u8x8_font_h_
 
 #include "Arduino.h"
-const uint8_t z_font_5x8[] = {
+const uint8_t z_font_5x8[] PROGMEM= {
         5, 1, 4, 5, 8,
         0x00, 0x00, 0x00, 0x00, 0x00,            // Code for char
         0xBF, 0x00, 0x00, 0x00, 0x00,            // Code for char !
